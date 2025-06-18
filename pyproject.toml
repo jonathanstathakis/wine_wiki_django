@@ -9,6 +9,14 @@ dependencies = ["django-types>=0.20.0", "django>=5.2.1", "django-stubs>=5.2.0"]
 
 [tool.setuptools]
 package-dir = { "" = "src" }
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+wine_wiki = [
+  "templates/wine_wiki/*.html",
+  "templates/wine_wiki/**/*.html",
+  "static/wine_wiki/**/*",
+]
