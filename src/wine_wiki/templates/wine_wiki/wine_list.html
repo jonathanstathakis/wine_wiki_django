@@ -8,7 +8,7 @@
       {% for subcat, wines in cat.items %}
         <h3 class="wine_list_h3">{{ subcat|title }}</h3>
           {% for wine in wines %}
-        <div class="wine_list_row" onclick='window.location="{% url "wine" wine.pk %}"'>
+        <div class="wine_list_row" onclick='window.location="{% url "wine-wiki:wine" wine.pk %}"'>
               <div class="wine_list_vintage">{{wine.vintage|upper}} </div>
               <div class="wine_list_wine_name_producer";> {% if wine.producer %} {{wine.producer|title}}{%endif %}{%if wine.wine_name %}, '{{wine.wine_name|title}}'{% endif %} {%if wine.variety %}, {{wine.variety|title}} {% endif %}</div>
               <div class="wine_list_region"> {% if wine.subregion %}{{wine.subregion|title}}{% if wine.subregion and wine.region %}, {% endif %}{% endif %}{{wine.region|title}}</div>
