@@ -7,6 +7,8 @@ from django.urls import reverse_lazy
 from .forms import UserRegisterForm
 from django.views.generic.edit import CreateView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -67,6 +69,24 @@ class WineUpdateView(generic.UpdateView):
     model = Wine
     fields = "__all__"
     template_name = "wine_wiki/wine_update.html"
+
+
+class WineCreateView(generic.CreateView):
+    model = Wine
+    fields = "__all__"
+    template_name = "wine_wiki/wine_create.html"
+    success_url = reverse_lazy("wine_wiki:home")
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        messages.success(self.request, "The wine was created successfully.")
+        return super(WineCreateView, self).form_valid(form)
+
+
+class WineDeleteView(generic.DeleteView):
+    model = Wine
+    success_url = reverse_lazy("wine-wiki:wine-list")
+    template_name = "wine_wiki/wine-delete.html"
 
 
 # class SignUpView(SuccessMessageMixin, CreateView):

@@ -29,14 +29,20 @@ urlpatterns = [
         RedirectView.as_view(url="home"),
     ),
     path(
-        "home",
+        "home/",
         view=generic.TemplateView.as_view(template_name="wine_wiki/home.html"),
         name="home",
     ),
-    path("wine-index/", view=views.WineListView.as_view(), name="wine-index"),
-    path("<int:pk>/", view=views.WineView.as_view(), name="wine"),
+    path("wine-list/", view=views.WineListView.as_view(), name="wine-list"),
+    path("wine/<int:pk>/", view=views.WineView.as_view(), name="wine"),
     path("update/<int:pk>/", view=views.WineUpdateView.as_view(), name="wine-update"),
     path("admin/", admin.site.urls),
+    path("wine-create/", view=views.WineCreateView.as_view(), name="wine-create"),
+    path(
+        "wine-delete/<int:pk>/",
+        view=views.WineDeleteView.as_view(),
+        name="wine-delete",
+    ),
     # path("accounts/", include("django.contrib.auth.urls")),  # new
     # path("sign_up/", view=views.SignUpView.as_view(), name="sign-up"),
 ]

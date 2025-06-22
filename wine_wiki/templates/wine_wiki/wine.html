@@ -41,6 +41,9 @@
     </div>
   <div class="wine-meta">
   <a class="button" href="{% url 'wine-wiki:wine-update' wine.pk %}">Edit</a>
+
+  <a class="button" href="{% url 'wine-wiki:wine-delete' wine.pk %}">Delete Wine</a>
+
   </div>
 </div>
 {% endblock %}
