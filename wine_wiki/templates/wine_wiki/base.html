@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'wine_wiki/style.css' %}" />
+
+<div class="container">
+  <div class="header">
+    <div class="header-links">
+      <p><a href="{% url 'wine_wiki:home' %}">Home</a></p>
+    </div>
+    <div class="header-user">
+      <p>{{ user.username|default:"Guest" }}</p>
+      </div>
+    </div>
+  <div class="content">{% block content %} {% endblock %}</div>
+  <div class="footer"><p> By Jonathan Stathakis, patent pending.</p></div>
+</div>

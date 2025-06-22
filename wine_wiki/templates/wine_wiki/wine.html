@@ -1,0 +1,46 @@
+{% extends "wine_wiki/base.html" %} {% block content %}
+
+<div class="wine-container">
+  <div class="wine-content">
+    <h1> {{ wine_title }}</h1>
+
+    <h2>Description</h2>
+
+    {{wine.description}}
+
+    <h2>Links</h2>
+    <ul>
+        <li>
+            <a href="http://www.wine-searcher.com/find/{{wine.winesearcher_str}}">
+                wine-searcher
+            </a>
+        </li>
+        <li>
+            <a
+                href="https://duckduckgo.com/?t=ffab&q={{wine.search_eng_str}}&atb=v468-1&ia=web"
+                >DuckDuckGo</a
+            >
+        </li>
+        <li>
+            <a
+                href="https://duckduckgo.com/?q=site%3Awww.cellartracker.com+{{wine.search_eng_str}}&t=ffab&atb=v468-1&ia=web"
+                >DuckDuckGo: CellarTracker</a
+            >
+        </li>
+        <li></li>
+    </ul>
+    <h2>Related</h2>
+
+    <ul>
+        <li>Producer: {{wine.producer}}</li>
+        <li>Vintage: {{wine.vintage}}</li>
+        <li>Region: {{wine.region}}</li>
+        <li>Subregion: {{wine.subregion}}</li>
+        <li>Variety: {{wine.variety}}</li>
+    </ul>
+    </div>
+  <div class="wine-meta">
+  <a class="button" href="{% url 'wine-wiki:wine-update' wine.pk %}">Edit</a>
+  </div>
+</div>
+{% endblock %}

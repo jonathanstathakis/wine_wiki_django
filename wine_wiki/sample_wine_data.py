@@ -1,0 +1,100 @@
+# sample data to be used during dev
+
+
+# dict(
+#     winelistcategory_pk=,
+#     winelistsubcat_pk=,
+#     wine_name=,
+#     vintage=,
+#     region=,
+#     subregion=,
+#     country=,
+#     variety=,
+#     producer=,
+#     is_published=,
+#     bpos_key=,
+#     price=,
+# )
+
+sample_data = [
+    dict(
+        winelistcategory_pk="white wine",
+        winelistsubcat_pk="champagne",
+        wine_name="blanc d'argile",
+        vintage="nv",
+        region="champagne",
+        subregion="cote des bar",
+        country="france",
+        variety="",
+        producer="vouette et sorbee",
+        is_published=True,
+        created_on=None,
+        bpos_key="abc",
+        price=550,
+        description="",
+    ),
+    dict(
+        winelistcategory_pk="white wine",
+        winelistsubcat_pk="riesling",
+        wine_name="",
+        vintage="2023",
+        region="nsw",
+        subregion="canberra district",
+        country="australia",
+        variety="riesling",
+        producer="clonakilla",
+        is_published=True,
+        created_on=None,
+        bpos_key="def",
+        price=95,
+        description="",
+    ),
+    dict(
+        winelistcategory_pk="white wine",
+        winelistsubcat_pk="white varietals",
+        wine_name="terra d'uva",
+        vintage=2022,
+        region="",
+        subregion="greco di tufo",
+        country="italy",
+        variety="greco",
+        producer="benito ferrara",
+        is_published=True,
+        bpos_key="ghi",
+        price=115,
+    ),
+    dict(
+        winelistcategory_pk="red wine",
+        winelistsubcat_pk="pinot noir",
+        wine_name="",
+        vintage=2022,
+        region="tasmania",
+        subregion="",
+        country="australia",
+        variety="pinot noir",
+        producer="jane eyre",
+        is_published=True,
+        bpos_key="jkl",
+        price=260,
+    ),
+    dict(
+        winelistcategory_pk="sweet wine",
+        winelistsubcat_pk="rest of world",
+        wine_name="'finale' noble",
+        vintage=2019,
+        region="North Canterbury",
+        subregion="",
+        country="New Zealand",
+        variety="[sauvignon blanc, semillon]",
+        producer="pegasus bay",
+        is_published=True,
+        bpos_key="mno",
+        price=140,
+    ),
+]
+
+from wine_wiki import models
+
+
+def create_wine(Wine, data: dict):
+    return wine

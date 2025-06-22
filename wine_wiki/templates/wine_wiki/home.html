@@ -1,0 +1,19 @@
+
+{% extends "wine_wiki/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<h1>Wine Wiki</h1>
+
+<p>A multi-dimensional view of the Bennelong wine list.</p>
+
+<h2>Table of Contents</h2>
+
+<ul>
+  <li>
+    <a href="{% url 'wine-wiki:wine-index' %}"> Wine List</a>
+  </li>
+</ul>
+
+{% endblock %}
