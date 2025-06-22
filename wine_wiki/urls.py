@@ -21,7 +21,8 @@ from django.views.generic.base import RedirectView
 from django.views import generic
 from django.contrib import admin
 
-# app_name = "wine_wiki"
+app_name = "wine_wiki"
+
 urlpatterns = [
     path(
         "",
